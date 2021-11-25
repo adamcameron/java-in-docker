@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+    java:
+        build:
+            context: ./java
+        volumes:
+            - ./java/root_home/.bash_history:/root/.bash_history
+        stdin_open: true
+        tty: true
+        networks:
+            - backend
+
+networks:
+  backend:
+    driver: "bridge"
